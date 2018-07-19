@@ -14,11 +14,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FindOutlier.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Learn/src/FindOutlier/FindOutlier.java">
+      <file leaf-file-name="DuplicateEncoder.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Learn/src/DuplicateEncoder/DuplicateEncoder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="354">
+              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+              <folding>
+                <element signature="e#796#797#0" expanded="true" />
+                <element signature="e#856#857#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,6 +51,7 @@
         <option value="$PROJECT_DIR$/Learn/src/SumDigPower/SumDigPower.java" />
         <option value="$PROJECT_DIR$/Learn/src/DirReduction/DirReduction.java" />
         <option value="$PROJECT_DIR$/Learn/src/FindOutlier/FindOutlier.java" />
+        <option value="$PROJECT_DIR$/Learn/src/DuplicateEncoder/DuplicateEncoder.java" />
       </list>
     </option>
   </component>
@@ -64,9 +69,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -91,6 +96,13 @@
               <item name="Learn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DirReduction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Codewars" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Codewars" type="462c0819:PsiDirectoryNode" />
+              <item name="Learn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DuplicateEncoder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Codewars" type="b2602c69:ProjectViewProjectNode" />
@@ -148,7 +160,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.FindOutlier">
+  <component name="RunManager" selected="Application.DuplicateEncoder">
     <configuration name="DirReduction" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DirReduction.DirReduction" />
       <module name="Learn" />
@@ -160,6 +172,17 @@
         </pattern>
       </extension>
     </configuration>
+    <configuration name="DuplicateEncoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DuplicateEncoder.DuplicateEncoder" />
+      <module name="Learn" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DuplicateEncoder.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="FindOutlier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="FindOutlier.FindOutlier" />
       <module name="Learn" />
@@ -167,17 +190,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="FindOutlier.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
-    <configuration name="Solution (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TribonacciSequence.Solution" />
-      <module name="Learn" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="TribonacciSequence.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -246,19 +258,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.Solution (1)" />
       <item itemvalue="Application.Solution (2)" />
       <item itemvalue="Application.SumDigPower" />
       <item itemvalue="Application.DirReduction" />
       <item itemvalue="Application.FindOutlier" />
+      <item itemvalue="Application.DuplicateEncoder" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DuplicateEncoder" />
         <item itemvalue="Application.FindOutlier" />
         <item itemvalue="Application.DirReduction" />
         <item itemvalue="Application.SumDigPower" />
         <item itemvalue="Application.Solution (2)" />
-        <item itemvalue="Application.Solution (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -316,6 +328,27 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Learn/src/FindOutlier/FindOutlier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learn/src/FindOutlier/FindOutlier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learn/src/FindOutlier/FindOutlier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Learn/src/DirReduction/DirReduction.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1751">
@@ -494,7 +527,18 @@
     <entry file="file://$PROJECT_DIR$/Learn/src/FindOutlier/FindOutlier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learn/src/DuplicateEncoder/DuplicateEncoder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+          <folding>
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#856#857#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
