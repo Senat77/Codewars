@@ -30,6 +30,7 @@ public class BrainLuck
 {
     private byte[] cpu;     // память
     private int pos;        // индекс тек. ячейки в памяти
+    private int inpPos;     // индекс в строке входных данных
 
     private String code;    // код
 
@@ -44,6 +45,15 @@ public class BrainLuck
 
     public String process(String input)
     {
+        // Запихиваем входные данные в память
+        /*
+        for (int i = 0; i < input.length(); i++)
+        {
+            cpu[i] = input.getBytes()[i];
+        }
+        */
+        StringBuilder sb = new StringBuilder();
+
         for(byte b : code.getBytes())
         {
             switch(b)
@@ -66,10 +76,41 @@ public class BrainLuck
                 case('-'):
                 {
                     cpu[pos]--;
+                    break;
                 }
-                case()
+                case('.'):
+                {
+                    sb.append(cpu[pos]);
+                    //System.out.print(cpu[pos]);
+                    break;
+                }
+                case(','):
+                {
+                    cpu[pos] = input.getBytes()[inpPos++];
+                    break;
+                }
+                case('['):
+                {
+                    if(cpu[pos] == 0)
+                    {
+                        while(cpu[pos] != ']')
+                            pos++;
+                        pos++;
+                    }
+                    break;
+                }
+                case(']'):
+                {
+                    if(cpu[pos] != 0)
+                    {
+                        while(cpu[pos] != '[')
+                            pos--;
+                        pos++;
+                    }
+                    break;
+                }
             }
         }
-        return "";
+        return sb.toString();
     }
 }
