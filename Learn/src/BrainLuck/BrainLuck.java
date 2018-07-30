@@ -29,84 +29,107 @@ the output of the interpreted code (always as a string), produced by the . instr
 public class BrainLuck
 {
     private byte[] cpu;     // память
-    private int pos;        // индекс тек. ячейки в памяти
-    private int inpPos;     // индекс в строке входных данных
-
+    private int cpuPos;     // индекс тек. ячейки в памяти
     private String code;    // код
+    private int codePos;    // индекс в строке кода
+    private String inp;     // Входные данные
+    private int inputPos;   // индекс в строке входных данных
 
     public BrainLuck(String code)
     {
         cpu = new byte[30000];
         for(byte b : cpu)
             b = 0;
-        pos = 0;
+        cpuPos = 0;
         this.code = code;
+        codePos = 0;
+        inp = "";
+        inputPos = 0;
     }
 
     public String process(String input)
     {
-        // Запихиваем входные данные в память
-        /*
-        for (int i = 0; i < input.length(); i++)
-        {
-            cpu[i] = input.getBytes()[i];
-        }
-        */
-        StringBuilder sb = new StringBuilder();
 
-        for(byte b : code.getBytes())
+        StringBuilder sb = new StringBuilder();     // Результат
+        inp = input;
+
+        while(codePos < code.length())
         {
-            switch(b)
+            switch(code.getBytes()[codePos])
             {
                 case('>'):
                 {
-                    pos++;
+                    cpuPos++;
+                    codePos++;
                     break;
                 }
                 case('<'):
                 {
-                    pos--;
+                    cpuPos--;
+                    codePos++;
                     break;
                 }
                 case('+'):
                 {
-                    cpu[pos]++;
+                    cpu[cpuPos]++;
+                    codePos++;
                     break;
                 }
                 case('-'):
                 {
-                    cpu[pos]--;
+                    cpu[cpuPos]--;
+                    codePos++;
                     break;
                 }
                 case('.'):
                 {
-                    sb.append(cpu[pos]);
-                    //System.out.print(cpu[pos]);
+                    sb.append((char)cpu[cpuPos]);
+                    //System.out.println("Record: " + "codePos = " + codePos + " inputPos = " + inputPos);
+                    //System.out.println(sb.toString());
+                    codePos++;
                     break;
                 }
                 case(','):
                 {
-                    cpu[pos] = input.getBytes()[inpPos++];
+                    cpu[cpuPos] = (byte)inp.charAt(inputPos++);
+                    //System.out.println("Read: " + "codePos = " + codePos + " inputPos = " + (inputPos-1));
+                    codePos++;
                     break;
                 }
                 case('['):
                 {
-                    if(cpu[pos] == 0)
+                    int cycleCount = 0;
+                    if(cpu[cpuPos] == 0)
                     {
-                        while(cpu[pos] != ']')
-                            pos++;
-                        pos++;
+                        do
+                        {
+                            codePos++;
+                            if((byte)code.charAt(codePos) == '[') cycleCount++;
+                            if((byte)code.charAt(codePos) == ']')
+                                if(cycleCount == 0) break;
+                                else cycleCount--;
+                        }
+                        while(true);
                     }
+                    codePos++;
                     break;
                 }
                 case(']'):
                 {
-                    if(cpu[pos] != 0)
+                    int cycleCount = 0;
+                    if(cpu[cpuPos] != 0)
                     {
-                        while(cpu[pos] != '[')
-                            pos--;
-                        pos++;
+                        do
+                        {
+                            codePos--;
+                            if((byte)code.charAt(codePos) == ']') cycleCount++;
+                            if((byte)code.charAt(codePos) == '[')
+                                if(cycleCount == 0) break;
+                                else cycleCount--;
+                        }
+                        while(true);
                     }
+                    codePos++;
                     break;
                 }
             }
