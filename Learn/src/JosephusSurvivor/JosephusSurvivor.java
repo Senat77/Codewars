@@ -29,6 +29,8 @@ will be used, using an array/list to compute the number of the survivor may be t
 k will always be >=1.
  */
 
+import java.util.ArrayList;
+
 public class JosephusSurvivor
 {
     public static void main(String[] args)
@@ -36,13 +38,40 @@ public class JosephusSurvivor
         System.out.println(josephusSurvivor(7,6));
     }
 
+    public static class Node
+    {
+        public int key;
+        public Node next;
+
+        public XList (int key) {this.key = key;next = null;}
+    }
+
     public static int josephusSurvivor(final int n, final int k)
     {
-        // F(2^n + k) = 2k + 1
-        // F(2^7 + 3) = 2*3 + 1
-        int res = n;
-        while (res >= n)
-            res = (josephusSurvivor(--res,k) + k - 1) % res + 1;
-        return res;
+        XList first = new XList (1);
+        XList t = first;
+        for (int i = 2; i <= n; i++)
+        {
+            XList newNode = new XList(i);
+            System.out.println("Added new person : " + newNode.key);
+            t.next = newNode;
+            t = newNode;
+        }
+        t.next = first;
+
+        System.out.println("Begin from " + first.key);
+        first = t;
+
+        while(first != first.next)
+        {
+            for (int i = 1; i < k ; i++)
+            {
+                first = first.next;
+            }
+            System.out.println("Remove : " + first.next.key);
+            first.next = first.next.next;
+        }
+
+        return first.key;
     }
 }
