@@ -35,7 +35,7 @@ public class JosephusSurvivor
 {
     public static void main(String[] args)
     {
-        System.out.println(josephusSurvivor(7,6));
+        System.out.println(josephusSurvivor(7,5));
     }
 
     public static class Node
@@ -43,23 +43,23 @@ public class JosephusSurvivor
         public int key;
         public Node next;
 
-        public XList (int key) {this.key = key;next = null;}
+        public Node (int key) {this.key = key;next = null;}
     }
 
     public static int josephusSurvivor(final int n, final int k)
     {
-        XList first = new XList (1);
-        XList t = first;
+        Node first = new Node (1);
+        Node t = first;
         for (int i = 2; i <= n; i++)
         {
-            XList newNode = new XList(i);
-            System.out.println("Added new person : " + newNode.key);
+            Node newNode = new Node(i);
+            //System.out.println("Added new person : " + newNode.key);
             t.next = newNode;
             t = newNode;
         }
         t.next = first;
 
-        System.out.println("Begin from " + first.key);
+        //System.out.println("Begin from " + first.key);
         first = t;
 
         while(first != first.next)
@@ -68,7 +68,7 @@ public class JosephusSurvivor
             {
                 first = first.next;
             }
-            System.out.println("Remove : " + first.next.key);
+            //System.out.println("Remove : " + first.next.key);
             first.next = first.next.next;
         }
 
