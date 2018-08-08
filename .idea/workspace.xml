@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="15f86727-064d-41e3-8385-442ecaeb70dd" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/Learn/src/JosephusSurvivor/JosephusSurvivor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Learn/src/JosephusSurvivor/JosephusSurvivor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learn/JosephusSurvivor/JosephusSurvivor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learn/JosephusSurvivor/JosephusSurvivor.class" afterDir="false" />
-    </list>
+    <list default="true" id="15f86727-064d-41e3-8385-442ecaeb70dd" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +12,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="JosephusSurvivor.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Learn/src/JosephusSurvivor/JosephusSurvivor.java">
+      <file leaf-file-name="Kata.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Learn/src/NextBiggerNumber/Kata.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="68" column="35" lean-forward="true" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+            <state relative-caret-position="560">
+              <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -53,6 +53,7 @@
         <option value="$PROJECT_DIR$/Learn/src/BrainLuck/BrainLuck.java" />
         <option value="$PROJECT_DIR$/Learn/src/BrainLuck/Solution.java" />
         <option value="$PROJECT_DIR$/Learn/src/JosephusSurvivor/JosephusSurvivor.java" />
+        <option value="$PROJECT_DIR$/Learn/src/NextBiggerNumber/Kata.java" />
       </list>
     </option>
   </component>
@@ -70,9 +71,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -138,6 +136,13 @@
               <item name="Codewars" type="462c0819:PsiDirectoryNode" />
               <item name="Learn" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="NextBiggerNumber" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Codewars" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Codewars" type="462c0819:PsiDirectoryNode" />
+              <item name="Learn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="SumDigPower" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -195,6 +200,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -213,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.JosephusSurvivor">
+  <component name="RunManager" selected="Application.Kata (1)">
     <configuration name="DuplicateEncoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DuplicateEncoder.DuplicateEncoder" />
       <module name="Learn" />
@@ -225,17 +233,6 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="FindOutlier" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FindOutlier.FindOutlier" />
-      <module name="Learn" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="FindOutlier.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-    </configuration>
     <configuration name="JosephusSurvivor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="JosephusSurvivor.JosephusSurvivor" />
       <module name="Learn" />
@@ -243,6 +240,17 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="JosephusSurvivor.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Kata (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="NextBiggerNumber.Kata" />
+      <module name="Learn" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="NextBiggerNumber.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -311,19 +319,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="Application.FindOutlier" />
       <item itemvalue="Application.DuplicateEncoder" />
       <item itemvalue="Application.Kata" />
       <item itemvalue="Application.Solution" />
       <item itemvalue="Application.JosephusSurvivor" />
+      <item itemvalue="Application.Kata (1)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Kata (1)" />
         <item itemvalue="Application.JosephusSurvivor" />
         <item itemvalue="Application.Solution" />
         <item itemvalue="Application.Kata" />
         <item itemvalue="Application.DuplicateEncoder" />
-        <item itemvalue="Application.FindOutlier" />
       </list>
     </recent_temporary>
   </component>
@@ -346,7 +354,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32698414" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.325887" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -362,7 +370,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3968254" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3955322" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -384,11 +392,24 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Learn/src/NextBiggerNumber/Kata.java</url>
+          <line>36</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="7" />
+      <option name="time" value="8" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Learn/src/JosephusSurvivor/JosephusSurvivor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="68" column="35" lean-forward="true" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Learn/src/JosephusSurvivor/JosephusSurvivor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
@@ -714,7 +735,17 @@
     <entry file="file://$PROJECT_DIR$/Learn/src/JosephusSurvivor/JosephusSurvivor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="458">
-          <caret line="68" column="35" lean-forward="true" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+          <caret line="68" column="35" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Learn/src/NextBiggerNumber/Kata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="35" column="8" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
