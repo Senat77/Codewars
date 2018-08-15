@@ -34,10 +34,18 @@ josephus([1,2,3,4,5,6,7],3)==[3,6,2,7,5,1,4]
 For more info, browse the Josephus Permutation page on wikipedia; related kata: Josephus Survivor.
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Solution
 {
     public static void main(String[] args)
     {
-        Josephus josephus = new Josephus();
+        ArrayList<Integer> al = new ArrayList<>();
+        for (int i = 0; i < 7; i++)
+        {
+            al.add(i+1);
+        }
+        System.out.println(Josephus.josephusPermutation(al,3));
     }
 }
