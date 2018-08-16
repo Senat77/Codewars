@@ -44,15 +44,68 @@ Special thanks to the colleague that, seeing my code and commenting that I worke
 made me realize that it could be indeed a good idea for a kata :)
  */
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Solution
 {
     public static void main(String[] args)
     {
-
+        System.out.println(generate_bc("mysite.com/pictures/holidays.html", " : "));
+        System.out.println(generate_bc("www.codewars.com/users/GiacomoSorbi", " / "));
+        System.out.println(generate_bc("www.microsoft.com/docs/index.htm", " * "));
+        System.out.println(generate_bc("mysite.com/very-long-url-to-make-a-silly-yet-meaningful-example/example.htm", " > "));
+        System.out.println(generate_bc("www.very-long-site_name-to-make-a-silly-yet-meaningful-example.com/users/giacomo-sorbi", " + "));
     }
 
     public static String generate_bc(String url, String separator)
     {
-        return "";
+        StringBuilder res = new StringBuilder("<a href=\"/\">HOME</a>");
+        // Отсекаем доменную часть
+        url = url.substring(url.indexOf('/') + 1,url.length());
+        // Обрабатываем поддомены (разделы)
+        while(url.indexOf('/') > -1)
+        {
+            String subdom = url.substring(0,url.indexOf('/'));
+            url = url.substring(url.indexOf('/') + 1, url.length());
+            String abrSubdom = "";
+            // Если длина subdom > 30 , его необходимо вывести в виде абреввиатуры
+            if(subdom.length() > 30)
+            {
+                ArrayList<String> l = new ArrayList<>(Arrays.asList(subdom.split("[-_]")));
+                //System.out.println(l);
+
+                /*
+                char[] bytes = subdom.toCharArray();
+                for (int i = 0; i < bytes.length; i++)
+                {
+                    if(i == 0 && Character.isLetterOrDigit(bytes[0]))
+                        abrSubdom += Character.toUpperCase(bytes[0]);
+                    else
+                    if(Character.isLetterOrDigit(bytes[i]) && !Character.isLetterOrDigit(bytes[i-1]))
+                        abrSubdom += Character.toUpperCase(bytes[i]);
+                }
+                */
+            }
+            // Стандартное окончание url
+            if(url.indexOf("index.") == 0)
+            {
+                res.append(separator + "<span class=\"active\">");
+                res.append(subdom.toUpperCase());
+                res.append("</span>");
+                return res.toString();
+            }
+            res.append(separator + "<a href=\"/");
+            res.append(subdom);
+            if(abrSubdom.isEmpty())
+            {
+                res.append("/\">" + subdom.toUpperCase() + "</a>");
+            }
+            else
+            {
+                res.append("/\">" + abrSubdom + "</a>");
+            }
+        }
+        return res.toString();
     }
 }
