@@ -33,21 +33,17 @@ enthusiast and for showing me this mathematical curiosity too with his usual con
 FUNDAMENTALS
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
-        print(Xbonacci.tribonacci(new double []{1,1,1},10));
-        print(Xbonacci.tribonacci(new double []{0,0,1},10));
-        print(Xbonacci.tribonacci(new double []{0,1,1},10));
+public class Solution {
+    public static void main(String[] args) {
+        print(Xbonacci.tribonacci(new double[]{1, 1, 1}, 10));
+        print(Xbonacci.tribonacci(new double[]{0, 0, 1}, 10));
+        print(Xbonacci.tribonacci(new double[]{0, 1, 1}, 10));
     }
 
-    public static void print (double[] d)
-    {
+    public static void print(double[] d) {
         System.out.print("\n[");
-        for (int i = 0; i < d.length; i++)
-        {
-            System.out.print(d[i] +", ");
+        for (int i = 0; i < d.length; i++) {
+            System.out.print(d[i] + ", ");
         }
         System.out.println("...]");
     }

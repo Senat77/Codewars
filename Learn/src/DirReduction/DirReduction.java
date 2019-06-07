@@ -60,40 +60,36 @@ Hence the result path is itself : ["NORTH", "WEST", "SOUTH", "EAST"].
 
 import java.util.Arrays;
 
-public class DirReduction
-{
-    public static void main(String[] args)
-    {
+public class DirReduction {
+    public static void main(String[] args) {
         System.out.println(DirReduction.dirReduc(new String[]{"NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH"}));
         System.out.println(DirReduction.dirReduc(new String[]{}));
         System.out.println(DirReduction.dirReduc(new String[]{"NORTH", "WEST", "SOUTH", "EAST"}));
     }
 
-    public static String[] dirReduc(String[] arr)
-    {
+    public static String[] dirReduc(String[] arr) {
         // Сформируем строку из всех параметров
         if (arr == null) return null;
 
         String path = Arrays.toString(arr);
-        path = " " + path.substring(1,path.length()-1) + ",";
+        path = " " + path.substring(1, path.length() - 1) + ",";
         //System.out.println(path);
         // Делаем реплейсы
         boolean replaceFlag = true;
-        while(replaceFlag)
-        {
+        while (replaceFlag) {
             replaceFlag = false;
             String temp = path;
-            path = path.replaceAll(" NORTH, SOUTH,","");
-            path = path.replaceAll(" SOUTH, NORTH,","");
-            path = path.replaceAll(" WEST, EAST,","");
-            path = path.replaceAll(" EAST, WEST,","");
-            if(!temp.equals(path)) replaceFlag = true;
+            path = path.replaceAll(" NORTH, SOUTH,", "");
+            path = path.replaceAll(" SOUTH, NORTH,", "");
+            path = path.replaceAll(" WEST, EAST,", "");
+            path = path.replaceAll(" EAST, WEST,", "");
+            if (!temp.equals(path)) replaceFlag = true;
         }
         // Убираем лишние символы
-        if(!path.equals(""))
-            path = path.substring(1,path.length()-1);
+        if (!path.equals(""))
+            path = path.substring(1, path.length() - 1);
         else
-            return new String []{};
+            return new String[]{};
         //System.out.println(path);
         // Формируем массив
         String[] res = path.split(", ");

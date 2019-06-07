@@ -26,8 +26,7 @@ character's ASCII code and will be consumed by the , instruction
 the output of the interpreted code (always as a string), produced by the . instruction.
  */
 
-public class BrainLuck
-{
+public class BrainLuck {
     private byte[] cpu;     // память
     private int cpuPos;     // индекс тек. ячейки в памяти
     private String code;    // код
@@ -35,10 +34,9 @@ public class BrainLuck
     private String inp;     // Входные данные
     private int inputPos;   // индекс в строке входных данных
 
-    public BrainLuck(String code)
-    {
+    public BrainLuck(String code) {
         cpu = new byte[30000];
-        for(byte b : cpu)
+        for (byte b : cpu)
             b = 0;
         cpuPos = 0;
         this.code = code;
@@ -47,87 +45,72 @@ public class BrainLuck
         inputPos = 0;
     }
 
-    public String process(String input)
-    {
+    public String process(String input) {
 
         StringBuilder sb = new StringBuilder();     // Результат
         inp = input;
 
-        while(codePos < code.length())
-        {
-            switch(code.getBytes()[codePos])
-            {
-                case('>'):
-                {
+        while (codePos < code.length()) {
+            switch (code.getBytes()[codePos]) {
+                case ('>'): {
                     cpuPos++;
                     codePos++;
                     break;
                 }
-                case('<'):
-                {
+                case ('<'): {
                     cpuPos--;
                     codePos++;
                     break;
                 }
-                case('+'):
-                {
+                case ('+'): {
                     cpu[cpuPos]++;
                     codePos++;
                     break;
                 }
-                case('-'):
-                {
+                case ('-'): {
                     cpu[cpuPos]--;
                     codePos++;
                     break;
                 }
-                case('.'):
-                {
-                    sb.append((char)cpu[cpuPos]);
+                case ('.'): {
+                    sb.append((char) cpu[cpuPos]);
                     //System.out.println("Record: " + "codePos = " + codePos + " inputPos = " + inputPos);
                     //System.out.println(sb.toString());
                     codePos++;
                     break;
                 }
-                case(','):
-                {
-                    cpu[cpuPos] = (byte)inp.charAt(inputPos++);
+                case (','): {
+                    cpu[cpuPos] = (byte) inp.charAt(inputPos++);
                     //System.out.println("Read: " + "codePos = " + codePos + " inputPos = " + (inputPos-1));
                     codePos++;
                     break;
                 }
-                case('['):
-                {
+                case ('['): {
                     int cycleCount = 0;
-                    if(cpu[cpuPos] == 0)
-                    {
-                        do
-                        {
+                    if (cpu[cpuPos] == 0) {
+                        do {
                             codePos++;
-                            if((byte)code.charAt(codePos) == '[') cycleCount++;
-                            if((byte)code.charAt(codePos) == ']')
-                                if(cycleCount == 0) break;
+                            if ((byte) code.charAt(codePos) == '[') cycleCount++;
+                            if ((byte) code.charAt(codePos) == ']')
+                                if (cycleCount == 0) break;
                                 else cycleCount--;
                         }
-                        while(true);
+                        while (true);
                     }
                     codePos++;
                     break;
                 }
-                case(']'):
-                {
+                case (']'): {
                     int cycleCount = 0;
-                    if(cpu[cpuPos] != 0)
-                    {
-                        do
-                        {
+                    if (cpu[cpuPos] != 0) {
+                        do {
                             codePos--;
-                            if((byte)code.charAt(codePos) == ']') cycleCount++;
-                            if((byte)code.charAt(codePos) == '[')
-                                if(cycleCount == 0) break;
+                            if ((byte) code.charAt(codePos) == ']') cycleCount++;
+                            if ((byte) code.charAt(codePos) == '[')
+                                if (cycleCount == 0) break;
                                 else cycleCount--;
                         }
-                        while(true);
+                        while (true);
                     }
                     codePos++;
                     break;

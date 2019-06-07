@@ -31,27 +31,25 @@ k will always be >=1.
 
 import java.util.ArrayList;
 
-public class JosephusSurvivor
-{
-    public static void main(String[] args)
-    {
-        System.out.println(josephusSurvivor(7,5));
+public class JosephusSurvivor {
+    public static void main(String[] args) {
+        System.out.println(josephusSurvivor(7, 5));
     }
 
-    public static class Node
-    {
+    public static class Node {
         public int key;
         public Node next;
 
-        public Node (int key) {this.key = key;next = null;}
+        public Node(int key) {
+            this.key = key;
+            next = null;
+        }
     }
 
-    public static int josephusSurvivor(final int n, final int k)
-    {
-        Node first = new Node (1);
+    public static int josephusSurvivor(final int n, final int k) {
+        Node first = new Node(1);
         Node t = first;
-        for (int i = 2; i <= n; i++)
-        {
+        for (int i = 2; i <= n; i++) {
             Node newNode = new Node(i);
             //System.out.println("Added new person : " + newNode.key);
             t.next = newNode;
@@ -62,10 +60,8 @@ public class JosephusSurvivor
         //System.out.println("Begin from " + first.key);
         first = t;
 
-        while(first != first.next)
-        {
-            for (int i = 1; i < k ; i++)
-            {
+        while (first != first.next) {
+            for (int i = 1; i < k; i++) {
                 first = first.next;
             }
             //System.out.println("Remove : " + first.next.key);

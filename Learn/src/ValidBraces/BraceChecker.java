@@ -1,24 +1,19 @@
 package ValidBraces;
 
-public class BraceChecker
-{
-    public static  boolean isValid(String braces)
-    {
+public class BraceChecker {
+    public static boolean isValid(String braces) {
         // Add code here
         System.out.println("Braces set = " + braces);
-        String[] braceTempl = {"{}","()","[]"};
+        String[] braceTempl = {"{}", "()", "[]"};
         boolean flag = false;
 
-        if(braces.length() % 2 != 0) return false;
+        if (braces.length() % 2 != 0) return false;
 
-        while(true)
-        {
+        while (true) {
             flag = false; // ни один шаблон не найден
 
-            for(int i=0;i<3;i++)
-            {
-                if (braces.indexOf(braceTempl[i]) != -1)
-                {
+            for (int i = 0; i < 3; i++) {
+                if (braces.indexOf(braceTempl[i]) != -1) {
                     braces = braces.substring(0, braces.indexOf(braceTempl[i])) +
                             braces.substring(braces.indexOf(braceTempl[i]) + 2, braces.length());
                     System.out.println(braces);
@@ -27,9 +22,9 @@ public class BraceChecker
                 }
             }
 
-            if(!flag && !braces.isEmpty()) return false;
+            if (!flag && !braces.isEmpty()) return false;
 
-            if(braces.isEmpty()) return true;
+            if (braces.isEmpty()) return true;
         }
     }
 }

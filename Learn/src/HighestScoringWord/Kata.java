@@ -16,38 +16,33 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.TreeMap;
 
-public class Kata
-{
-    public static void main(String[] args)
-    {
+public class Kata {
+    public static void main(String[] args) {
         System.out.println(high("man i need a taxi up to ubud"));
         System.out.println(high("what time are we climbing up to the volcano"));
         System.out.println(high("take me to semynak"));
     }
 
-    public static String high(String s)
-    {
+    public static String high(String s) {
         // Формируем список из строки
         ArrayList<String> list = new ArrayList<>();
         list.addAll(Arrays.asList(s.split(" ")));
         // System.out.println(list);
         // Формируем хэш-мапу
-        TreeMap<Integer,String> map = new TreeMap<>();
-        for (int i = 0; i < list.size(); i++)
-        {
+        TreeMap<Integer, String> map = new TreeMap<>();
+        for (int i = 0; i < list.size(); i++) {
             String str = list.get(i);
             int weight = 0;
-            for (int j = 0; j < str.length(); j++)
-            {
+            for (int j = 0; j < str.length(); j++) {
                 weight += str.charAt(j) - 'a' + 1;
             }
 
             // Если в мапе нет - добавляем
-            if(!map.containsKey(weight))
-                map.put(weight,str);
+            if (!map.containsKey(weight))
+                map.put(weight, str);
         }
 
-        if(map.size() != 0)
+        if (map.size() != 0)
             return map.lastEntry().getValue();
         else
             return "";

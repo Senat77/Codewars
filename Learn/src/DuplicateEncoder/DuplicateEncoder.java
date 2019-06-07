@@ -25,34 +25,26 @@ possible to correct it).
 
 import java.util.HashMap;
 
-public class DuplicateEncoder
-{
-    public static void main(String[] args)
-    {
+public class DuplicateEncoder {
+    public static void main(String[] args) {
         System.out.println(encode("Prespecialized"));
     }
 
-    public static String encode(String word)
-    {
-        HashMap<Character,Integer> map = new HashMap<>();
+    public static String encode(String word) {
+        HashMap<Character, Integer> map = new HashMap<>();
 
         String t = word.toLowerCase();
 
-        for (int i = 0; i < t.length(); i++)
-        {
-            if (map.containsKey(t.charAt(i)))
-            {
-                map.put(t.charAt(i),map.get(t.charAt(i))+1);
-            }
-            else
-            {
-                map.put(t.charAt(i),1);
+        for (int i = 0; i < t.length(); i++) {
+            if (map.containsKey(t.charAt(i))) {
+                map.put(t.charAt(i), map.get(t.charAt(i)) + 1);
+            } else {
+                map.put(t.charAt(i), 1);
             }
         }
 
         String res = "";
-        for (int i = 0; i < t.length(); i++)
-        {
+        for (int i = 0; i < t.length(); i++) {
             if (map.get(t.charAt(i)) > 1)
                 res += ")";
             else

@@ -47,89 +47,77 @@ made me realize that it could be indeed a good idea for a kata :)
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         //System.out.println(generate_bc("mysite.com/pictures/holidays.html", " : "));
         //System.out.println(generate_bc("www.codewars.com/users/GiacomoSorbi", " / "));
         //System.out.println(generate_bc("www.microsoft.com/docs/index.htm", " * "));
         //System.out.println(generate_bc("mysite.com/very-long-url-to-make-a-silly-yet-meaningful-example/example.htm", " > "));
         //System.out.println(generate_bc("www.very-long-site_name-to-make-a-silly-yet-meaningful-example.com/users/giacomo-sorbi", " + "));
         //System.out.println(generate_bc("www.codewars.com/users/GiacomoSorbi?ref=CodeWars","\\" ));
-        System.out.println(generate_bc("twitter.de/profiles/research-meningitis-or-bioengineering/secret-page.html"," - "));
-        System.out.println(generate_bc("https://www.linkedin.com/in/giacomosorbi"," * "));
+        System.out.println(generate_bc("twitter.de/profiles/research-meningitis-or-bioengineering/secret-page.html", " - "));
+        System.out.println(generate_bc("https://www.linkedin.com/in/giacomosorbi", " * "));
     }
 
-    public static String generate_bc(String url, String separator)
-    {
+    public static String generate_bc(String url, String separator) {
         StringBuilder res = new StringBuilder("<a href=\"/\">HOME</a>");
         // Отсекаем доменную часть
-        url = url.substring(url.indexOf('/') + 1,url.length());
+        url = url.substring(url.indexOf('/') + 1, url.length());
         // Обрабатываем поддомены (разделы)
-        while(url.indexOf('/') > -1)
-        {
-            String subdom = url.substring(0,url.indexOf('/'));
+        while (url.indexOf('/') > -1) {
+            String subdom = url.substring(0, url.indexOf('/'));
             url = url.substring(url.indexOf('/') + 1, url.length());
             String abrSubdom = "";
             // Если subdom содержит # или ? - то это спан и финал
-            if(subdom.contains("?") || subdom.contains("#"))
-            {
-                subdom = subdom.replace("#","?");
-                subdom = subdom.substring(0,subdom.indexOf("?")).toUpperCase();
+            if (subdom.contains("?") || subdom.contains("#")) {
+                subdom = subdom.replace("#", "?");
+                subdom = subdom.substring(0, subdom.indexOf("?")).toUpperCase();
                 res.append(separator + "<span class=\"active\">");
-                res.append(subdom.replaceAll("[-_]"," "));
+                res.append(subdom.replaceAll("[-_]", " "));
                 res.append("</span>");
                 return res.toString();
             }
             // Если длина subdom > 30 , его необходимо вывести в виде абреввиатуры
-            if(subdom.length() > 30)
-            {
+            if (subdom.length() > 30) {
                 ArrayList<String> l = new ArrayList<>(Arrays.asList(subdom.split("[-_]")));
                 ArrayList<String> el = new ArrayList<String>(Arrays.asList("the", "of", "in", "from", "by", "with", "and", "or", "for", "to", "at", "a"));
 
-                for (String s : l)
-                {
+                for (String s : l) {
                     if (!el.contains(s))
                         abrSubdom += s.charAt(0);
                 }
                 abrSubdom = abrSubdom.toUpperCase();
             }
             // Стандартное окончание url
-            if(url.indexOf("index.") == 0)
-            {
+            if (url.indexOf("index.") == 0) {
                 res.append(separator + "<span class=\"active\">");
-                res.append(subdom.toUpperCase().replaceAll("[-_]"," "));
+                res.append(subdom.toUpperCase().replaceAll("[-_]", " "));
                 res.append("</span>");
                 return res.toString();
             }
             res.append(separator + "<a href=\"/");
             //res.append(subdom.replaceAll("[-_]"," "));
-            if(abrSubdom.isEmpty())
-            {
-                res.append(subdom.replaceAll("[-_]"," "));
-                res.append("/\">" + subdom.toUpperCase().replaceAll("[-_]"," ") + "</a>");
-            }
-            else
-            {
+            if (abrSubdom.isEmpty()) {
+                res.append(subdom.replaceAll("[-_]", " "));
+                res.append("/\">" + subdom.toUpperCase().replaceAll("[-_]", " ") + "</a>");
+            } else {
                 res.append(subdom);
-                res.append("/\">" + abrSubdom.replaceAll("[-_]"," ") + "</a>");
+                res.append("/\">" + abrSubdom.replaceAll("[-_]", " ") + "</a>");
             }
         }
         // Остаток - это span
-        if(url.contains("?") || url.contains("#"))
-        {
-            url = url.replace("#","?");
-            url = url.substring(0,url.indexOf("?")).toUpperCase();
+        if (url.contains("?") || url.contains("#")) {
+            url = url.replace("#", "?");
+            url = url.substring(0, url.indexOf("?")).toUpperCase();
             res.append(separator + "<span class=\"active\">");
-            res.append(url.replaceAll("[-_]"," "));
+            res.append(url.replaceAll("[-_]", " "));
             res.append("</span>");
             return res.toString();
         }
         res.append(separator + "<span class=\"active\">");
-        if(url.indexOf(".") > 0)
-            url = url.substring(0,url.indexOf("."));
-        res.append(url.toUpperCase().replaceAll("[-_]"," "));
+        if (url.indexOf(".") > 0)
+            url = url.substring(0, url.indexOf("."));
+        res.append(url.toUpperCase().replaceAll("[-_]", " "));
         res.append("</span>");
         return res.toString();
     }

@@ -21,10 +21,8 @@ SeriesSum(5) => 1 + 1/4 + 1/7 + 1/10 + 1/13 = "1.57"
 NOTE: In PHP the function is called series_sum().
 */
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         System.out.println(NthSeries.seriesSum(1));
         System.out.println(NthSeries.seriesSum(2));
         System.out.println(NthSeries.seriesSum(5));

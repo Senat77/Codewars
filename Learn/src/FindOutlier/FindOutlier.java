@@ -13,28 +13,23 @@ Should return: 11 (the only odd number)
 Should return: 160 (the only even number)
  */
 
-public class FindOutlier
-{
-    public static void main(String[] args)
-    {
+public class FindOutlier {
+    public static void main(String[] args) {
         //System.out.println(find(new int[] {2, 4, 0, 100, 4, 11, 2602, 36}));
         //System.out.println(find(new int[] {160, 3, 1719, 19, 11, 13, -21}));
-        System.out.println(find(new int[] {17,6,8,10,6,12,24,36}));
+        System.out.println(find(new int[]{17, 6, 8, 10, 6, 12, 24, 36}));
     }
 
-    public static int find(int[] integers)
-    {
-        int oe= 0;
-        for (int i = 0; i < 3; i++)
-        {
-            if(integers[i] % 2 == 0) oe++;
+    public static int find(int[] integers) {
+        int oe = 0;
+        for (int i = 0; i < 3; i++) {
+            if (integers[i] % 2 == 0) oe++;
             else oe--;
         }
 
         boolean ifEven = oe >= 1;
 
-        for (int i = 0; i < integers.length; i++)
-        {
+        for (int i = 0; i < integers.length; i++) {
             if (integers[i] % 2 != 0 && ifEven) return integers[i];
             if (integers[i] % 2 == 0 && !ifEven) return integers[i];
         }

@@ -27,33 +27,28 @@ Enjoy it!!
 import java.util.ArrayList;
 import java.util.List;
 
-public class SumDigPower
-{
-    public static void main(String[] args)
-    {
-        System.out.println(sumDigPow(90,100));
+public class SumDigPower {
+    public static void main(String[] args) {
+        System.out.println(sumDigPow(90, 100));
     }
 
-    public static List<Long> sumDigPow(long a, long b)
-    {
+    public static List<Long> sumDigPow(long a, long b) {
         // your code
         List<Long> list = new ArrayList<>();
 
-        for(long i = a;i <= b; i++)
-        {
+        for (long i = a; i <= b; i++) {
             //System.out.print("Current number = " + i);
             String s = String.valueOf(i);
             int pow = s.length();
             long sum = 0;
-            for (int j = 1; j <= pow; j++)
-            {
+            for (int j = 1; j <= pow; j++) {
                 //System.out.println(j);
-                sum += Math.pow(Long.parseLong(String.valueOf(s.charAt(j-1))),j);
+                sum += Math.pow(Long.parseLong(String.valueOf(s.charAt(j - 1))), j);
             }
 
             //System.out.println(" SumDigPow = " + sum);
 
-            if(i == sum) list.add(i);
+            if (i == sum) list.add(i);
         }
 
         return list;

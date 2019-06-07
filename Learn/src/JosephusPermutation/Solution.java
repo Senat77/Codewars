@@ -37,15 +37,12 @@ For more info, browse the Josephus Permutation page on wikipedia; related kata: 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         ArrayList<Integer> al = new ArrayList<>();
-        for (int i = 0; i < 7; i++)
-        {
-            al.add(i+1);
+        for (int i = 0; i < 7; i++) {
+            al.add(i + 1);
         }
-        System.out.println(Josephus.josephusPermutation(al,3));
+        System.out.println(Josephus.josephusPermutation(al, 3));
     }
 }

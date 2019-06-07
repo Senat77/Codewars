@@ -22,10 +22,8 @@ Examples
 "[({})](]" =>  False
 
 */
-public class Solution
-{
-    public static void main(String[] args)
-    {
+public class Solution {
+    public static void main(String[] args) {
         System.out.println(BraceChecker.isValid("())({}}{()][]["));
         //System.out.println(BraceChecker.isValid("()"));
         //System.out.println(BraceChecker.isValid("[({})](]"));
